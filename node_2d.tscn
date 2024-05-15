@@ -1,15 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://bek4xiw30wxvc"]
-
-[ext_resource type="Texture2D" uid="uid://2wtjrgx7m6m3" path="res://pizza.png" id="1_78lbx"]
+[gd_scene format=3 uid="uid://bek4xiw30wxvc"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Pizza" type="Sprite2D" parent="."]
-position = Vector2(914, 207)
-texture = ExtResource("1_78lbx")
-
-[node name="Pizza2" type="Sprite2D" parent="."]
-position = Vector2(265, 222)
-texture = ExtResource("1_78lbx")
