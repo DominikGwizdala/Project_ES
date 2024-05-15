@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://bahs7bytcbne"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_qfrif"]
+[ext_resource type="Texture2D" uid="uid://cym80s5dkgb4n" path="res://icon.svg" id="1_ty2ee"]
+[ext_resource type="PackedScene" uid="uid://bnj8nqoqfge5s" path="res://Scenes/kilzone.tscn" id="2_2dtjw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0rcx"]
+atlas = ExtResource("1_ty2ee")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x24f7"]
+atlas = ExtResource("1_ty2ee")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lwux"]
+atlas = ExtResource("1_ty2ee")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieq41"]
+atlas = ExtResource("1_ty2ee")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e65fl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0rcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x24f7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lwux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieq41")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3cl7"]
+size = Vector2(46, 32)
+
+[node name="enemy" type="Node2D"]
+z_as_relative = false
+script = ExtResource("1_qfrif")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.34375, 1)
+sprite_frames = SubResource("SpriteFrames_e65fl")
+autoplay = "default"
+frame_progress = 0.0112395
+
+[node name="Kilzone" parent="." instance=ExtResource("2_2dtjw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kilzone"]
+shape = SubResource("RectangleShape2D_l3cl7")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(30, 0)
+collide_with_areas = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-30, 0)
+collide_with_areas = true

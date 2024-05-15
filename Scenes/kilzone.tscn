@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bnj8nqoqfge5s"]
 
-[ext_resource type="Script" path="res://Scenes/kilzone.gd" id="1_873dh"]
+[ext_resource type="Script" path="res://Scripts/kilzone.gd" id="1_ccarf"]
 
 [node name="Kilzone" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_873dh")
+script = ExtResource("1_ccarf")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
