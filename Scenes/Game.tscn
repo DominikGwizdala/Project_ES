@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bek4xiw30wxvc"]
+[gd_scene load_steps=4 format=3 uid="uid://bek4xiw30wxvc"]
 
 [ext_resource type="PackedScene" uid="uid://2jpf7vu8kbik" path="res://Scenes/player.tscn" id="1_8dns7"]
 
-[sub_resource type="TileSet" id="TileSet_fkre7"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eefiu"]
+distance = -15.9974
+
+[sub_resource type="TileSet" id="TileSet_oc0x7"]
 
 [node name="Game" type="Node2D"]
 
@@ -12,7 +15,13 @@ position = Vector2(-74, -13)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-19, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4, 1)
+shape = SubResource("WorldBoundaryShape2D_eefiu")
+
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-61, -1)
-tile_set = SubResource("TileSet_fkre7")
+tile_set = SubResource("TileSet_oc0x7")
 format = 2
