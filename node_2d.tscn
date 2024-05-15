@@ -7,5 +7,9 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pizza" type="Sprite2D" parent="."]
-position = Vector2(524, 324)
+position = Vector2(914, 207)
+texture = ExtResource("1_78lbx")
+
+[node name="Pizza2" type="Sprite2D" parent="."]
+position = Vector2(265, 222)
 texture = ExtResource("1_78lbx")
