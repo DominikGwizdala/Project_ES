@@ -43,13 +43,15 @@ animations = [{
 size = Vector2(37.5, 31)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 2
 script = ExtResource("1_jt835")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8opmq")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.743445
+frame_progress = 0.283102
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_f888x")
