@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_qfrif"]
 [ext_resource type="Texture2D" uid="uid://cym80s5dkgb4n" path="res://icon.svg" id="1_ty2ee"]
-[ext_resource type="PackedScene" uid="uid://bnj8nqoqfge5s" path="res://Scenes/kilzone.tscn" id="2_2dtjw"]
+[ext_resource type="PackedScene" uid="uid://bnj8nqoqfge5s" path="res://Scenes/killzone.tscn" id="2_2dtjw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0rcx"]
 atlas = ExtResource("1_ty2ee")
@@ -53,9 +53,9 @@ sprite_frames = SubResource("SpriteFrames_e65fl")
 autoplay = "default"
 frame_progress = 0.0112395
 
-[node name="Kilzone" parent="." instance=ExtResource("2_2dtjw")]
+[node name="Killzone" parent="." instance=ExtResource("2_2dtjw")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kilzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("RectangleShape2D_l3cl7")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
