@@ -1,24 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://2jpf7vu8kbik"]
+[gd_scene load_steps=5 format=3 uid="uid://2jpf7vu8kbik"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_jt835"]
-[ext_resource type="Texture2D" uid="uid://bwnlhu7jv6uqv" path="res://Assets/Sprites/PlayerCharacter/PlayerCharacter.png" id="2_4tpt5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7i6i2"]
-atlas = ExtResource("2_4tpt5")
-region = Rect2(0, 0, 500, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2sf3y"]
-atlas = ExtResource("2_4tpt5")
-region = Rect2(500, 0, 500, 500)
+[ext_resource type="Texture2D" uid="uid://l07nmd4214vj" path="res://Assets/Sprites/PlayerCharacter/Character.png" id="2_cuc53"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8opmq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7i6i2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2sf3y")
+"texture": ExtResource("2_cuc53")
 }],
 "loop": true,
 "name": &"Idle",
@@ -26,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f888x"]
-size = Vector2(8, 31)
+size = Vector2(8, 25)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -34,12 +23,12 @@ collision_layer = 2
 script = ExtResource("1_jt835")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -4)
-scale = Vector2(0.08, 0.08)
+scale = Vector2(0.31, 0.31)
 sprite_frames = SubResource("SpriteFrames_8opmq")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.138444
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_f888x")
