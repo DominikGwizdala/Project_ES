@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bek4xiw30wxvc"]
+[gd_scene load_steps=16 format=3 uid="uid://bek4xiw30wxvc"]
 
 [ext_resource type="Texture2D" uid="uid://cym80s5dkgb4n" path="res://icon.svg" id="1_75vv7"]
+[ext_resource type="Texture2D" uid="uid://b4310jxmesc6e" path="res://Assets/Sprites/Background/background.png" id="1_kad50"]
 [ext_resource type="PackedScene" uid="uid://2jpf7vu8kbik" path="res://Scenes/player.tscn" id="2_fehm0"]
 [ext_resource type="PackedScene" uid="uid://bnj8nqoqfge5s" path="res://Scenes/killzone.tscn" id="3_3sx6v"]
+[ext_resource type="Texture2D" uid="uid://trfu3yilhgb6" path="res://Assets/Sprites/Background/test_background_bricks.png" id="3_pxa3v"]
 [ext_resource type="PackedScene" uid="uid://bahs7bytcbne" path="res://Scenes/enemy.tscn" id="4_nqvkb"]
 [ext_resource type="PackedScene" uid="uid://bqkvdio70gui5" path="res://Scenes/platform.tscn" id="5_46krl"]
 [ext_resource type="PackedScene" uid="uid://bgxtndqkaklcn" path="res://Scenes/pickable.tscn" id="6_fbikh"]
@@ -266,9 +268,25 @@ texture = ExtResource("1_75vv7")
 7:7/0/physics_layer_0/angular_velocity = 0.0
 7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nh6rs"]
+texture = ExtResource("3_pxa3v")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_oc0x7"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hux4a")
+sources/1 = SubResource("TileSetAtlasSource_nh6rs")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r1f5u"]
 
@@ -312,6 +330,10 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-36, -8)
+texture = ExtResource("1_kad50")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_oc0x7")
 format = 2
@@ -352,3 +374,31 @@ autoplay = "move"
 
 [node name="Pickable" parent="Coins" instance=ExtResource("6_fbikh")]
 position = Vector2(272, -26)
+
+[node name="TestBackgroundBricks" type="Sprite2D" parent="."]
+position = Vector2(-111, 0)
+texture = ExtResource("3_pxa3v")
+
+[node name="TestBackgroundBricks2" type="Sprite2D" parent="."]
+position = Vector2(-107, -5)
+texture = ExtResource("3_pxa3v")
+
+[node name="TestBackgroundBricks3" type="Sprite2D" parent="."]
+position = Vector2(-129, -5)
+texture = ExtResource("3_pxa3v")
+
+[node name="TestBackgroundBricks4" type="Sprite2D" parent="."]
+position = Vector2(-120, -7)
+texture = ExtResource("3_pxa3v")
+
+[node name="TestBackgroundBricks5" type="Sprite2D" parent="."]
+position = Vector2(-125, -11)
+texture = ExtResource("3_pxa3v")
+
+[node name="TestBackgroundBricks6" type="Sprite2D" parent="."]
+position = Vector2(-118, -16)
+texture = ExtResource("3_pxa3v")
+
+[node name="TestBackgroundBricks7" type="Sprite2D" parent="."]
+position = Vector2(-99, -9)
+texture = ExtResource("3_pxa3v")
