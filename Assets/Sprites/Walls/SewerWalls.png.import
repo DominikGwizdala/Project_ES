@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg1plyu42cjx3"
-path="res://.godot/imported/PlatformsBackground.png-a91fb57f2b8661e0589b537d7246fb30.ctex"
+uid="uid://ch3fh3g7eimnp"
+path="res://.godot/imported/SewerWalls.png-074d919f59c4049066a43677c090b52d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Platforms/PlatformsBackground.png"
-dest_files=["res://.godot/imported/PlatformsBackground.png-a91fb57f2b8661e0589b537d7246fb30.ctex"]
+source_file="res://Assets/Sprites/Walls/SewerWalls.png"
+dest_files=["res://.godot/imported/SewerWalls.png-074d919f59c4049066a43677c090b52d.ctex"]
 
 [params]
 
