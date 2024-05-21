@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0fmxjwbgpiyg"
-path="res://.godot/imported/Struktury .png-c58400fa41d7dca8ca828f4434520744.ctex"
+uid="uid://beh2mn0cy47g6"
+path="res://.godot/imported/struktury.png-622e69640a0c8ee55a030addde2cb671.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Testowy/Struktury .png"
-dest_files=["res://.godot/imported/Struktury .png-c58400fa41d7dca8ca828f4434520744.ctex"]
+source_file="res://Assets/struktury.png"
+dest_files=["res://.godot/imported/struktury.png-622e69640a0c8ee55a030addde2cb671.ctex"]
 
 [params]
 
