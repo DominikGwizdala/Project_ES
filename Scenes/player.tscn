@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://2jpf7vu8kbik"]
+[gd_scene load_steps=10 format=3 uid="uid://2jpf7vu8kbik"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_jt835"]
 [ext_resource type="Texture2D" uid="uid://baq8sdr1o2fvq" path="res://Assets/Sprites/PlayerCharacter/Postać.png" id="2_ftis2"]
+[ext_resource type="Texture2D" uid="uid://d3effk32b7dql" path="res://Assets/Sprites/PlayerCharacter/moving.png" id="3_yr2fn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_stxer"]
 atlas = ExtResource("2_ftis2")
@@ -9,6 +10,14 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpdke"]
 atlas = ExtResource("2_ftis2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7o6b"]
+atlas = ExtResource("3_yr2fn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlbpr"]
+atlas = ExtResource("3_yr2fn")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c7yre"]
@@ -22,7 +31,18 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7o6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlbpr")
+}],
+"loop": true,
+"name": &"run",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f888x"]
@@ -37,8 +57,8 @@ script = ExtResource("1_jt835")
 position = Vector2(2.38419e-07, 0)
 scale = Vector2(1.85, 1.781)
 sprite_frames = SubResource("SpriteFrames_c7yre")
-animation = &"Idle"
-frame_progress = 0.25517
+animation = &"run"
+frame_progress = 0.656948
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 7)
