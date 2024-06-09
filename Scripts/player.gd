@@ -24,7 +24,7 @@ func _physics_process(delta):
 	#Obracanie postaci jak zmienia kierunek
 	if direction > 0:
 		animated_sprite.flip_h = false
-	elif direction > 0:
+	elif direction < 0:
 		animated_sprite.flip_h = true
 		
 	#Animacje
