@@ -33,8 +33,8 @@ func _physics_process(delta):
 			animated_sprite.play("Idle")
 		else:
 			animated_sprite.play("run")
-	#else:
-		#animated_sprite.play("jump")
+	else:
+		animated_sprite.play("jump")
 		
 	
 	if direction:
