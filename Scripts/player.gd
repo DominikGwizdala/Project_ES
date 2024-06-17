@@ -1,45 +1,52 @@
 extends CharacterBody2D
 
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -430.0
+@export var SPEED : float = 200.0
+@export var JUMP_VELOCITY : float = -430.0
+@export var double_jump : float = -230.0
+
+
+@onready var sprite : Sprite2D = $Sprite2D
+@onready var animation_tree : AnimationTree = $AnimationTree
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var animated_sprite = $AnimatedSprite2D
+var has_double_jumped : bool = false
+var direction : Vector2 = Vector2.ZERO
 
+func _ready():
+	animation_tree.active = true
 
-func _physics_process(delta):
+func _physics_process(delta): 
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
+	else:
+		has_double_jumped = false
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		elif not has_double_jumped:
+			velocity.y = double_jump # jak dodamy += to będzie skakać wyżej 
+			has_double_jumped = true
+			
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("move_left", "move_right")
-	#Obracanie postaci jak zmienia kierunek
-	if direction > 0:
-		animated_sprite.flip_h = false
-	elif direction < 0:
-		animated_sprite.flip_h = true
-		
-	#Animacje
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("Idle")
-		else:
-			animated_sprite.play("run")
-	else:
-		animated_sprite.play("jump")
-		
-	
-	if direction:
-		velocity.x = direction * SPEED
+	direction = Input.get_vector("move_left", "move_right","jump","down")
+	if direction.x !=0:
+		velocity.x = direction.x * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	update_animation()
+	update_facing_direction()
+func update_facing_direction():
+	if direction.x > 0:
+		sprite.flip_h = false
+	elif direction.x < 0:
+		sprite.flip_h = true
+func update_animation():
+	animation_tree.set("parameters/Move/blend_position", direction.x) 
+	
